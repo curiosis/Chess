@@ -6,7 +6,8 @@ using UnityEngine;
 public class PieceManager : MonoBehaviour
 {
     public GameObject piecePrefab;
-    private List<BasePiece> whitePieces = null, blackpieces = null;
+    private List<BasePiece> whitePieces = null;
+    private List<BasePiece> blackPieces = null;
 
     private string[] pieceOrder = new string[16]
     {
@@ -28,10 +29,10 @@ public class PieceManager : MonoBehaviour
     public void Setup(Board board)
     {
         whitePieces = CreatePieces(Color.white, new Color32(80, 124, 159, 255), board);
-        blackpieces = CreatePieces(Color.black, new Color32(210, 95, 64, 255), board);
+        blackPieces = CreatePieces(Color.black, new Color32(210, 95, 64, 255), board);
 
         PlacePieces(1, 0, whitePieces, board);
-        PlacePieces(6, 7, blackpieces, board);
+        PlacePieces(6, 7, blackPieces, board);
     }
 
     private List<BasePiece> CreatePieces(Color teamColor, Color32 spriteColor, Board board)

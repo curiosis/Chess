@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class BasePiece : EventTrigger
+public abstract class BasePiece : EventTrigger
 {
     public Color color = Color.clear;
 
@@ -15,6 +16,7 @@ public class BasePiece : EventTrigger
     {
         pieceManager = newPieceManager;
         color = teamColor;
+        GetComponent<Image>().color = spriteColor;
         rectTransform = GetComponent<RectTransform>();
     }
 

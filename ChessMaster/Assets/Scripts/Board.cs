@@ -16,7 +16,7 @@ public class Board : MonoBehaviour
             {
                 GameObject newCell = Instantiate(mCellPrefab, transform);
                 RectTransform rectTransform = newCell.GetComponent<RectTransform>();
-                rectTransform.anchoredPosition = new Vector2((j * 100) + 50, (i * 100) + 50);
+                rectTransform.anchoredPosition = new Vector2((j * 100), (i * 100));
                 mAllCells[j, i] = newCell.GetComponent<Cell>();
                 mAllCells[j, i].Setup(new Vector2Int(j, i), this);
                 mAllCells[j, i].GetComponent<Image>().color = new Color32(83, 62, 45, 255);
